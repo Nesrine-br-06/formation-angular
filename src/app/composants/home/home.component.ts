@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Stagiaire } from 'src/app/interfaces/stagiaire';
 
 @Component({
@@ -7,9 +8,16 @@ import { Stagiaire } from 'src/app/interfaces/stagiaire';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  maDate = Date.now();
+  nom ="Washigton";
+  prenom="Denzel";
+  city= "Nice";
+  zipCode = "06000";
+  streetName = "paradis";
  
   
     title = 'formation-angular';
+
     tab: number[] = [2, 5, 3, 8];
     moyennes: number[] = [12, 5, 16, 18];
     stagiaire: Stagiaire = { num: 100, nom: "wick", prenom: "john" };
@@ -21,15 +29,23 @@ export class HomeComponent implements OnInit {
     ]
     
   
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
   }
   direBonjour() {
     alert('bonjour');
   }
+  visiter(){
+const firstname="Kostas";
+const lastname="mitroglou";
+this.router.navigate(['/stagiaire', lastname, firstname]);
+//this.router.navigateByUrl('/stagiaire/${lastname}/${firstname}')
+
+  }
 
 }
+
   
 
  
