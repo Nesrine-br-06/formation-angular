@@ -1,0 +1,70 @@
+{
+    "utilisateurs": [
+        {
+            "id": 1,
+            "nom": "wick",
+            "prenom": "john",
+            "motDePasse": "wick"
+        },
+        {
+            "id": 2,
+            "nom": "travolta",
+            "prenom": "john",
+            "motDePasse": "travolta"
+        }
+    ],
+    "produits": [
+        {
+            "id": 2,
+            "designation": "souris",
+            "prixUnitaire": 200,
+            "quantiteEnStock": 20,
+            "chemin": ""
+        },
+        {
+            "designation": "clavier",
+            "prixUnitaire": 15,
+            "quantiteEnStock": 150,
+            "id": 3
+        },
+        {
+            "designation": "vidéo-projecteur",
+            "prixUnitaire": 400,
+            "quantiteEnStock": 200,
+            "id": 4
+        },
+        {
+            "id": 5
+        },
+        {
+            "id": 6
+        },
+        {
+            "id": 7
+        },
+        {
+            "id": 8
+        },
+        {
+            "id": 9
+        },
+        {
+            "id": 10
+        },
+        {
+            "id": 11
+        },
+        {
+            "id": 12
+        },
+        {
+            "id": 13
+        },
+        {
+            "id": 14
+        },
+        {
+            "id": 15
+        }
+    ]
+}

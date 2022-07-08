@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Produit } from 'src/app/interfaces/produit';
+import { ProduitService } from 'src/app/services/produit.service';
 
 @Component({
   selector: 'app-produit',
@@ -9,14 +10,34 @@ import { Produit } from 'src/app/interfaces/produit';
 export class ProduitComponent implements OnInit {
 produit : Produit = {};
 produits: Produit[]=[];
-  constructor() { }
+idProduit: number=0;
+  constructor(private ps: ProduitService) {} 
 
-  ngOnInit(): void {
-  }
-afficherTout(){
+  
+      ngOnInit(): void {
+        this.initProduit(); //méthode pour récupérer la liste des produits
+      }
+      ajouterProduit() {
+        this.ps.addProduct(this.produit).subscribe(res => { //ajouter un produit à la liste des produits
+          this.initProduit();
+        })
+        this.produit ={}
+        };
+      
 
-  this.produits.push({...this.produit}); //push c ajouter, ... spread operator
-  this.produit = {};
+        supprimerProduit(id=0) {
+          this.ps.deleteProduct(id).subscribe(res => {
+            this.initProduit();
+          })
+      }
+      initProduit() {
+        this.ps.getAllProducts().subscribe(res => {
+          this.produits = res;
+        });
+      }
+    }
+    
 
-}
-}
+
+
+
